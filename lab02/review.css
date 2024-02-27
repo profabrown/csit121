@@ -1,0 +1,33 @@
+body {
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: rgb(17, 136, 136);
+    color:beige;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+a {
+    color:rgb(6, 131, 127)
+}
+
+h1{
+    color:rgb(26, 25, 50); 
+    text-transform:uppercase;
+}
+h2 {
+    color:rgb(10, 58, 63)
+}
+
+h3 {
+    color:rgb(68, 64, 105);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+footer {
+    padding-left: 15px;
+    background-color: rgb(245, 207, 193);
+    color: black;
+    text-align: center;
+}
+
