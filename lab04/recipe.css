@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+/* background image from Beautiful Web Background Images : Website Backgrounds decordecoratedhouse.blogspot.com */
+body {
+    color: #2B2733;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-image: url(background.jpg);
+    background-size: cover;
+    background-color: rgb(220, 208, 255);
+}
+
+header {
+    text-align: center;
+}
+
+#wrapper {
+    width: 80%;
+    margin: 2% auto 2% auto;
+    padding: 15px;
+    background-color: rgb(220, 196, 245);
+    line-height: 1.5;
+    border-radius: 20px;
+}
+
+.row {
+    display: flex;
+    font-size: larger;
+}
+
+#ingred {
+    flex: 30%;
+    background-color: #d7d7d7;
+    border-radius: 20px 0px 0px 20px;
+    box-shadow: 3px 3px 5px #a4a4a4;
+    padding: 30px;
+}
+
+#instr {
+    flex: 70%;
+    background-color: rgb(197, 197, 197);
+    border-radius: 0px 20px 20px 0px;
+    box-shadow: 3px 3px 5px #a4a4a4;
+    padding: 30px;
+}
+
+#expo {
+    font-size: larger;
+    padding: 20px;
+}
+
+h1,h2,h3 {
+    color: #2B2733;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+p {
+    line-height: 1.3;
+}
+
+#author {
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #6b5086;
+}
+
+a {
+    background-color: rgb(65, 40, 87);
+    padding: 2px;
+    color:rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+ul li {
+    list-style-type: square;
+}
