@@ -6,7 +6,9 @@ decordecoratedhouse.blogspot.com */
     background-image: url(background.jpg);
     background-color: rgb(195, 182, 235);
 }
-
+nav a {
+    text-decoration: none;
+}
 header {
     text-align: center;
 
