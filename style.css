@@ -1,9 +1,18 @@
 body {
-    background-color: rgb(216, 205, 192);
+    background-color: rgb(159, 152, 142);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 40px;
 }
-
+main {
+    padding: 2px 15px ;
+    background-color: rgb(255, 255, 255);
+}
 h1 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+li {
+    line-height: 1.5;
+}
+a {
+    color:rgb(49, 75, 130)
 }
