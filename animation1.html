@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Examples</title>
+    <style>
+        /* General */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #3498db;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        .example-container {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .demo-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+            margin: 20px 0;
+            background-color: #f0f4f8;
+            padding: 20px;
+        }
+
+        .code-block {
+            background-color: #f6f8fa;
+            padding: 15px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+        }
+
+        /* Example 1: Simple Button Transition */
+        .button-1 {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            /* Transition */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button-1:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        /* Example 2: Color Fade Transition */
+        .color-box {
+            width: 100px;
+            height: 100px;
+            background-color: #e74c3c;
+            /* Transition */
+            transition: background-color 0.5s ease, border-radius 0.5s ease-in-out;
+        }
+
+        .color-box:hover {
+            background-color: #9b59b6;
+            border-radius: 50%;
+        }
+
+        /* Example 3: Basic Keyframe Animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pulse-box {
+            width: 100px;
+            height: 100px;
+            background-color: #2ecc71;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        /* Example 4: Loading Spinner Animation */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Example 5: Slide-in Animation */
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .slide-box {
+            width: 100px;
+            height: 100px;
+            background-color: #f39c12;
+            animation: slideIn 1s ease-out forwards;
+        }
+
+        /* Reset button to replay animations */
+        .reset-btn {
+            background-color: #7f8c8d;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .reset-btn:hover {
+            background-color: #5f6e6e;
+        }
+
+        /* Example 6: Multi-step Animation */
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-30px);
+            }
+
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .bounce-box {
+            width: 60px;
+            height: 60px;
+            background-color: #e67e22;
+            border-radius: 50%;
+            animation: bounce 2s infinite;
+        }
+
+        /* Example 7: Notification Badge Animation */
+        @keyframes notification {
+            0% {
+                transform: scale(1);
+                background-color: #e74c3c;
+            }
+
+            50% {
+                transform: scale(1.2);
+                background-color: #ff7979;
+            }
+
+            100% {
+                transform: scale(1);
+                background-color: #e74c3c;
+            }
+        }
+
+        .notification-badge {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 12px;
+            line-height: 20px;
+            animation: notification 1s ease-in-out infinite;
+            position: relative;
+            top: -10px;
+            right: -10px;
+        }
+
+        .notification-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #3498db;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Example 8: Transform Showcase */
+        .transform-box {
+            width: 80px;
+            height: 80px;
+            background-color: #1abc9c;
+            margin: 30px;
+            transition: transform 0.5s ease;
+        }
+
+        .transform-controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .transform-btn {
+            padding: 8px 12px;
+            font-size: 14px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Example 9: Animated Card Flip */
+        .card-container {
+            width: 200px;
+            height: 300px;
+            perspective: 1000px;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .card-front {
+            background-color: #3498db;
+            color: white;
+            font-size: 24px;
+        }
+
+        .card-back {
+            background-color: #2ecc71;
+            color: white;
+            transform: rotateY(180deg);
+            font-size: 18px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Animation Examples</h1>
+    <p>This page demonstrates various CSS animation and transition techniques. Hover over or click on elements to see
+        the animations in action.</p>
+
+    <!-- Example 1: Simple Button Transition -->
+    <div class="example-container">
+        <h2>Example 1: Simple Button Transition</h2>
+        <p>This button has transitions on its background color and size. Hover over the button to see the transition
+            effect.</p>
+        <div class="demo-area">
+            <button class="button-1">Hover</button>
+        </div>
+        <div class="code-block">
+            <pre>/* CSS */
+.button-1 {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    /* Transition */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-1:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}</pre>
+        </div>
+    </div>
+
+    <!-- Example 2: Color Fade Transition -->
+    <div class="example-container">
+        <h2>Example 2: Color Change and Shape Transition</h2>
+        <p>This box changes color and shape when hovered. Hover over the square to see it transform into a circle with a
+            different color.</p>
+        <div class="demo-area">
+            <div class="color-box"></div>
+        </div>
+        <div class="code-block">
+            <pre>/* CSS */
+.color-box {
+    width: 100px;
+    height: 100px;
+    background-color: #e74c3c;
+    /* Transition */
+    transition: background-color 0.5s ease, border-radius 0.5s ease-in-out;
+}
+
+.color-box:hover {
+    background-color: #9b59b6;
+    border-radius: 50%;
+}</pre>
+        </div>
+    </div>
+
+    <!-- Example 3: Basic Keyframe Animation -->
+    <div class="example-container">
+        <h2>Example 3: Pulse Animation using Keyframes</h2>
+        <p>This box continuously pulses using CSS keyframe animation. The animation runs infinitely and doesn't require
+            any user interaction.</p>
+        <div class="demo-area">
+            <div class="pulse-box"></div>
+        </div>
+        <div class="code-block">
+            <pre>/* CSS */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse-box {
+    width: 100px;
+    height: 100px;
+    background-color: #2ecc71;
+    animation: pulse 1.5s ease-in-out infinite;
+}</pre>
+        </div>
+    </div>
+
+    <!-- Example 4: Loading Spinner Animation -->
+    <div class="example-container">
+        <h2>Example 4: Loading Spinner</h2>
+        <p>A common loading spinner animation created using a continuous rotation animation.</p>
+        <div class="demo-area">
+            <div class="spinner"></div>
+        </div>
+        <div class="code-block">
+            <pre>/* CSS */
+@keyframes spin {
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% { 
+        transform: rotate(360deg); 
+    }
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}</pre>
+        </div>
+    </div>
+
+    <!-- Example 5: Slide-in Animation -->
+    <div class="example-container">
+        <h2>Example 5: Slide-in Animation</h2>
+        <p>This box slides in from the left side of the screen using a keyframe animation.</p>
+        <div class="demo-area">
+            <div class="slide-box"></div>
+            <button class="reset-btn" onclick="resetAnimation('.slide-box', 'slideIn 1s ease-out forwards')">Reset
+                Animation</button>
+        </div>
+        <div class="code-block">
+            <pre>/* CSS */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-box {
+    width: 100px;
+    height: 100px;
+    background-color: #f39c12;
+    animation: slideIn 1s ease-out forwards;
+}</pre>
+        </div>
+    </div>
+
+    <!-- Example 6: Multi-step Animation -->
+    <div class="example-container">
+        <h2>Example 6: Bounce Animation</h2>
+        <p>A multi-step bounce animation using multiple keyframe points.</p>
+        <div class="demo-area">
+            <div class="bounce-box"></div>
+        </div>
+        <div class="code-block">
+            <pre>/* CSS */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+.bounce-box {
+    width: 60px;
+    height: 60px;
+    background-color: #e67e22;
+    border-radius: 50%;
+    animation: bounce 2s infinite;
+}</pre>
+        </div>
+    </div>
+
+    <!-- Example 7: Notification Badge Animation -->
+    <div class="example-container">
+        <h2>Example 7: Notification Badge Animation</h2>
+        <p>A pulsing notification badge commonly seen in UI elements to attract attention.</p>
+        <div class="demo-area">
+            <div class="icon-wrapper">
+                <div class="notification-icon">📬</div>
+                <span class="notification-badge">3</span>
+            </div>
+        </div>
+        <div class="code-block">
+            <pre>/* CSS */
+@keyframes notification {
+    0% {
+        transform: scale(1);
+        background-color: #e74c3c;
+    }
+    50% {
+        transform: scale(1.2);
+        background-color: #ff7979;
+    }
+    100% {
+        transform: scale(1);
+        background-color: #e74c3c;
+    }
+}
+
+.notification-badge {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    animation: notification 1s ease-in-out infinite;
+    position: relative;
+    top: -10px;
+    right: -10px;
+}</pre>
+        </div>
+    </div>
+
+    <!-- Example 8: Transform Showcase -->
+    <div class="example-container">
+        <h2>Example 8: CSS Transform Showcase</h2>
+        <p>Click the buttons to apply different transform properties to the box.</p>
+        <div class="demo-area">
+            <div class="transform-controls">
+                <button class="transform-btn" onclick="applyTransform('scale(1.5)')">Scale</button>
+                <button class="transform-btn" onclick="applyTransform('rotate(45deg)')">Rotate</button>
+                <button class="transform-btn" onclick="applyTransform('translateY(-30px)')">Translate</button>
+                <button class="transform-btn" onclick="applyTransform('skew(15deg, 15deg)')">Skew</button>
+                <button class="transform-btn" onclick="applyTransform('scale(1.2) rotate(45deg)')">Combine</button>
+                <button class="transform-btn" onclick="applyTransform('none')">Reset</button>
+            </div>
+            <div class="transform-box" id="transformBox"></div>
+        </div>
+        <div class="code-block">
+            <pre>/* Some example transform properties */
+    transform: scale(1.5);         /* Make 1.5x bigger */
+    transform: rotate(45deg);      /* Rotate 45 degrees */
+    transform: translateY(-30px);  /* Move up 30px */
+    transform: skew(15deg, 15deg); /* Skew on both axes */
+    transform: scale(1.2) rotate(45deg);    /* Combined */</pre>
+        </div>
+    </div>
+
+    <!-- Example 9: Card Flip Animation -->
+    <div class="example-container">
+        <h2>Example 9: Card Flip Animation</h2>
+        <p>Click on the card to see a 3D flip animation using backface-visibility and transform-style properties.</p>
+        <div class="demo-area">
+            <div class="card-container">
+                <div class="card" id="flipCard">
+                    <div class="card-front">
+                        Front
+                    </div>
+                    <div class="card-back">
+                        Back of Card<br><br>
+                        This is an example of 3D transforms in CSS.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="code-block">
+            <pre>/* CSS */
+.card-container {
+    width: 200px;
+    height: 300px;
+    perspective: 1000px; /* Creates 3D effect */
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}</pre>
+        </div>
+    </div>
+
+    <script>
+        // This function resets an animation so it can play again
+        function resetAnimation(selector, animationValue) {
+            // Find the element using the selector (like '.slide-box')
+            const element = document.querySelector(selector);
+
+            // Temporarily remove the animation
+            element.style.animation = 'none';
+
+            // Force the browser to re-calculate layout (this is like "refreshing" the animation)
+            void element.offsetWidth;
+
+            // Reapply the animation so it restarts
+            element.style.animation = animationValue;
+        }
+
+        // This function changes the CSS transform style of the box
+        function applyTransform(transformValue) {
+            // Find the box with ID 'transformBox' and set its transform style
+            document.getElementById('transformBox').style.transform = transformValue;
+        }
+
+        // This code runs when the page loads
+        // It finds the card with ID 'flipCard' and adds a click event
+        document.getElementById('flipCard').addEventListener('click', function () {
+            // When clicked, toggle (add or remove) the 'flipped' class
+            // This class makes the card rotate to show the back
+            this.classList.toggle('flipped');
+        });
+    </script>
+
+</body>
+
+</html>
